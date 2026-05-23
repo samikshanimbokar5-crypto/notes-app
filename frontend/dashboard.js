@@ -22,7 +22,7 @@ async function createNote() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/notes/create",
+            "https://notes-app-gjsd.onrender.com",
             {
 
                 method: "POST",
@@ -63,7 +63,7 @@ async function getNotes() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/notes",
+            "https://notes-app-gjsd.onrender.com",
             {
 
                 headers: {
