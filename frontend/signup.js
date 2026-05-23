@@ -6,7 +6,7 @@ async function signup() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/auth/signup", {
+        const response = await fetch("https://notes-app-gjsd.onrender.com", {
 
             method: "POST",
 

@@ -125,7 +125,7 @@ async function deleteNote(id) {
     try {
 
         await fetch(
-            `http://localhost:5000/api/notes/delete/${id}`,
+            `https://notes-app-gjsd.onrender.com/delete/${id}`,
             {
 
                 method: "DELETE",
