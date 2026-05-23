@@ -14,7 +14,7 @@ async function createNote() {
 
     const content = document.getElementById("content").value;
 
-    if(title === "" || content === ""){
+    if (title === "" || content === "") {
         alert("Please fill all fields");
         return;
     }
@@ -22,7 +22,7 @@ async function createNote() {
     try {
 
         const response = await fetch(
-            "https://notes-app-gjsd.onrender.com",
+            "https://notes-app-gjsd.onrender.com/api/notes/create",
             {
 
                 method: "POST",
@@ -53,6 +53,7 @@ async function createNote() {
     } catch (error) {
 
         alert("Error creating note");
+        console.log(error);
     }
 }
 
@@ -63,7 +64,7 @@ async function getNotes() {
     try {
 
         const response = await fetch(
-            "https://notes-app-gjsd.onrender.com",
+            "https://notes-app-gjsd.onrender.com/api/notes",
             {
 
                 headers: {
@@ -79,7 +80,7 @@ async function getNotes() {
         notesDiv.innerHTML = "";
 
         // If no notes
-        if(notes.length === 0){
+        if (notes.length === 0) {
 
             notesDiv.innerHTML = `
                 <p style="margin-top:20px;">
@@ -115,6 +116,7 @@ async function getNotes() {
     } catch (error) {
 
         alert("Error fetching notes");
+        console.log(error);
     }
 }
 
@@ -125,7 +127,7 @@ async function deleteNote(id) {
     try {
 
         await fetch(
-            `https://notes-app-gjsd.onrender.com/delete/${id}`,
+            `https://notes-app-gjsd.onrender.com/api/notes/delete/${id}`,
             {
 
                 method: "DELETE",
@@ -141,6 +143,7 @@ async function deleteNote(id) {
     } catch (error) {
 
         alert("Error deleting note");
+        console.log(error);
     }
 }
 
