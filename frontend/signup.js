@@ -22,7 +22,9 @@ async function signup() {
         });
 
         const data = await response.json();
+
         console.log(data);
+
         alert(data.message);
 
         if (response.ok) {
@@ -32,7 +34,6 @@ async function signup() {
     } catch (error) {
 
         console.log(error);
-        alert(error);
-        
+        alert("Something went wrong");
     }
 }
