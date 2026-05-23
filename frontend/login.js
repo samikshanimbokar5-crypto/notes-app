@@ -1,7 +1,6 @@
 async function login() {
 
     const email = document.getElementById("email").value;
-
     const password = document.getElementById("password").value;
 
     try {
@@ -22,19 +21,13 @@ async function login() {
 
         const data = await response.json();
 
+        alert(data.message);
+
         if(response.ok){
 
-            // Save token
             localStorage.setItem("token", data.token);
 
-            alert("Login successful");
-
-            // Redirect
             window.location.href = "dashboard.html";
-
-        } else {
-
-            alert(data.message);
         }
 
     } catch (error) {
